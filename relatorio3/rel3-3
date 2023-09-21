@@ -1,0 +1,12 @@
+.data
+.text
+
+li $s0, 54
+li $s1, 45
+    
+add $s2, $s0, $s1
+
+# Exibir o resultado
+li $v0, 1
+move $a0, $s2
+syscall
