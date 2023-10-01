@@ -1,0 +1,33 @@
+.data
+number1: .word 10
+number2: .word 25
+number3: .word 43
+number4: .word 89
+
+.text
+
+# deslocamento a direita
+lw $t0, number1
+srl $t0, $t0, 8
+
+lw $t1, number2
+srl $t1, $t1, 8
+
+lw $t2, number3
+srl $t2, $t2, 8
+
+lw $t3, number4
+srl $t3, $t3, 8
+
+# deslocamento a esquerda
+lw $s0, number1
+sll $s0, $s0, 4
+
+lw $s1, number2
+sll $s1, $s1, 4
+
+lw $s2, number3
+sll $s2, $s2, 4
+
+lw $s3, number4
+sll $s3, $s3, 4

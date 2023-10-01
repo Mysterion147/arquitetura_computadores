@@ -1,0 +1,21 @@
+.data
+a: .word 45
+b: .word 230
+c: .word 874
+
+.text
+lw $t0, a
+lw $t1, b
+lw $t2, c
+
+bgt $t0, $t1, maior
+
+sub $t1, $t0, $t2
+add $t2, $t1, $t2
+j fim
+
+maior:
+sub $t2, $t0, $t1
+add $t0, $t1, $t2
+
+fim:

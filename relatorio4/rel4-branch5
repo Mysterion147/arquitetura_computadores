@@ -1,0 +1,17 @@
+.data
+i: .word 10
+cont: .word 0
+.text
+
+lw $t0, i
+li $t1, 0
+
+loop:
+blez $t0, end
+lw  $t2, cont
+addi $t2, $t2, 5
+sw  $t2, cont
+subi $t0, $t0, 2
+j loop
+
+end:
