@@ -1,0 +1,16 @@
+.data
+a: .space 40 # reservando espaco
+# valores de exemplo
+b: .word 147
+c: .word 78
+
+.text
+
+la $t0, a
+
+lw $t1, b
+lw $t2, c
+
+sub $t3, $t1, $t2
+
+sw $t3, 40($t0)

@@ -1,0 +1,18 @@
+.data
+a: .word 5 # exemplo
+b: .space 980 # reservando espaco
+c: .word 10 # exemplo
+
+.text
+
+lw $t0, a
+
+li $t1, 245
+li $t2, 4
+mul $t1, $t1, $t2
+add $t1, $t1, b
+
+lw $t3, c
+add $t4, $t0, $t3
+
+sw $t4, 0($t1)

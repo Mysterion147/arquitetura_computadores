@@ -1,0 +1,30 @@
+.data
+a: .word 4, 5
+j: .word 0
+
+.text
+
+lw $t0, a
+
+li $t1, 5
+bge $t0, $t1, else_label
+
+# if a[0] < 5, then:
+# a[0] = j + 2
+lw $t2, j
+li $t3, 2 
+add $t0, $t2, $t3
+sw $t0, a
+j end_label
+
+else_label:
+# if a[0] >= 5, then:
+# j = a[1] + 10
+lw $t4, a+4   # Carregar a[1] em $t4
+li $t5, 10    # Carregar 10 em $t5
+add $t2, $t4, $t5  # j = a[1] + 10
+sw $t2, j     # Armazenar o valor de j de volta
+
+end_label:
+li $v0, 10
+syscall
